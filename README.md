@@ -10,6 +10,6 @@ ChromeDriver
 
 
 
-Go to project folder and run;
+# Go to project folder and run;
 
-mvn -Dtest=TestClass test
+ mvn -Dtest=TestClass test
