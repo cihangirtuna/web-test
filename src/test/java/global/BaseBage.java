@@ -24,7 +24,7 @@ public class BaseBage {
 	public WebElement findElement(By by) {
 		waitPageLoad();
 		waitVisibility(by);
-		return driver.findElement(by);
+		return findElement(by);
 	}
 
 	public void clickBy(By by) {
@@ -42,13 +42,13 @@ public class BaseBage {
 
 	public void selectByValue(By by, String text) {
 		waitPageLoad();
-		Select select = new Select(driver.findElement(by));
+		Select select = new Select(findElement(by));
 		select.selectByValue(text);
 	}
 
 	public void selectByText(By by, String text) {
 		waitPageLoad();
-		Select select = new Select(driver.findElement(by));
+		Select select = new Select(findElement(by));
 		select.selectByVisibleText(text);
 	}
 
@@ -94,8 +94,7 @@ public class BaseBage {
 
 	public Boolean isElementExists(By by) {
 		waitPageLoad();
-		WebElement element = driver.findElement(by);
-		if (element.isDisplayed()) {
+		if (findElement(by).isDisplayed()) {
 			return true;
 		} else {
 			return false;
